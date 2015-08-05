@@ -39,4 +39,8 @@ group :development, :test do
 
   # Use RSpec for examples
   gem 'rspec-rails', '~> 3.3.3'
+
+  # A PhantomJS driver for Capybara
+  # NOTE: Brings Capybara as a dependency
+  gem 'poltergeist', '~> 1.6.0'
 end
