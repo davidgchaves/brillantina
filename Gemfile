@@ -46,4 +46,8 @@ group :development, :test do
 
   # Reset the database to a pristine state without using transactions
   gem 'database_cleaner', '~> 1.4.1'
+
+  # Run Jasmine specs headless with PhantomJS
+  # NOTE: Brings Jasmine in
+  gem 'teaspoon-jasmine', '~> 2.2.0'
 end
