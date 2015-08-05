@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 3.5.1'
 
+# Rails integration for Bower
+gem 'bower-rails', '~> 0.10.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
