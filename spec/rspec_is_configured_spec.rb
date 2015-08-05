@@ -5,7 +5,7 @@ describe "rspec" do
     expect(true).to eq true
   end
 
-  xit "can fail" do
-    expect(true).to eq false
-  end
+  #it "can fail" do
+  #  expect(true).to eq false
+  #end
 end

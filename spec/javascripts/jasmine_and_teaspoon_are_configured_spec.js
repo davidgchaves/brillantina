@@ -3,7 +3,7 @@ describe("Jasmine", function() {
     expect(true).toBe(true);
   });
 
-  xit("can fail", function() {
-    expect(true).toBe(false);
-  });
+  //it("can fail", function() {
+  //  expect(true).toBe(false);
+  //});
 });
