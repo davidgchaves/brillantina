@@ -43,4 +43,7 @@ group :development, :test do
   # A PhantomJS driver for Capybara
   # NOTE: Brings Capybara as a dependency
   gem 'poltergeist', '~> 1.6.0'
+
+  # Reset the database to a pristine state without using transactions
+  gem 'database_cleaner', '~> 1.4.1'
 end
