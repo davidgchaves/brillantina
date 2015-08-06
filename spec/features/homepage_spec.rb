@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Homepage" do
   before do
-    User.create email: 'paul@example.com', password: 'paul_at_example_dot_com'
+    User.create email: 'paul@example.com', password: 'paul-password'
   end
 
   scenario "after asking user to log in welcomes user" do
@@ -10,7 +10,7 @@ feature "Homepage" do
 
     expect_to_be_at_log_in_page
 
-    sign_in_with 'paul@example.com', 'paul_at_example_dot_com'
+    sign_in_with 'paul@example.com', 'paul-password'
 
     expect_welcome_message_for 'paul@example.com'
   end
