@@ -18,4 +18,20 @@ feature "Homepage" do
       expect(page).to have_content("Welcome to Brillantina, paul@example.com!")
     end
   end
+
+  scenario "after asking visitors to sign up welcomes new user" do
+    visit "/"
+    click_link "Sign up"
+
+    expect(page).to have_content("Sign up")
+
+    fill_in 'Email',                 with: 'new-user@example.com'
+    fill_in 'Password',              with: 'new-user-password'
+    fill_in 'Password confirmation', with: 'new-user-password'
+    click_button 'Sign up'
+
+    within "h1" do
+      expect(page).to have_content("Welcome to Brillantina, new-user@example.com!")
+    end
+  end
 end
