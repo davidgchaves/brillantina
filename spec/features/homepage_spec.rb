@@ -6,9 +6,9 @@ feature "Homepage" do
   end
 
   scenario "after asking user to log in welcomes user" do
-    visit_homepage
+    visit_home_page
 
-    expect(page).to have_content "Log in"
+    expect_to_be_at_log_in_page
 
     sign_in_with 'paul@example.com', 'paul_at_example_dot_com'
 
@@ -16,10 +16,9 @@ feature "Homepage" do
   end
 
   scenario "after asking visitors to sign up welcomes new user" do
-    visit_homepage
-    click_link "Sign up"
+    visit_sign_up_page_from_home_page
 
-    expect(page).to have_content "Sign up"
+    expect_to_be_at_sign_up_page
 
     sign_up_with 'new-user@example.com', 'new-user-password'
 
@@ -27,8 +26,13 @@ feature "Homepage" do
   end
 
   private
-    def visit_homepage
+    def visit_home_page
       visit "/"
+    end
+
+    def visit_sign_up_page_from_home_page
+      visit_home_page
+      click_link "Sign up"
     end
 
     def sign_in_with(email, password)
@@ -42,6 +46,18 @@ feature "Homepage" do
       fill_in 'Password',              with: 'new-user-password'
       fill_in 'Password confirmation', with: 'new-user-password'
       click_button 'Sign up'
+    end
+
+    def expect_to_be_at_log_in_page
+      within "h1" do
+        expect(page).to have_content "Log in"
+      end
+    end
+
+    def expect_to_be_at_sign_up_page
+      within "h1" do
+        expect(page).to have_content "Sign up"
+      end
     end
 
     def expect_welcome_message_for(email)
